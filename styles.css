@@ -1,0 +1,433 @@
+body { 
+    margin: 0; 
+    font-family: Arial, sans-serif;
+    background-color: #110741;
+}
+
+.navbar { 
+    background-color: #333; 
+    overflow: hidden;
+}
+.navbar ul { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    justify-content: space-around;
+}
+.navbar ul li { 
+    padding: 14px 20px;
+}
+.navbar ul li a {
+    color: white; 
+    text-decoration: none;
+}
+.navbar ul li a i {
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 18px; /* Icon size */
+}
+
+.header-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align children to the sides */
+    align-items: center; /* Center items vertically */
+    padding: 50px 20px; /* Adjust as needed */
+    background-color: black; /* Background color */
+    position: relative; /* Position context for badge */
+    max-height: 200px;
+}
+
+.left-section {
+    flex: 1; /* Allow this section to take up available space */
+    color: black; /* Text color for visibility */
+}
+
+.right-section {
+    flex: 0 0 400px; /* Fixed width for the right section; adjust as needed */
+    height: 100%; /* Ensure it has a height to fill */
+    /* background-image: url('images/beta1.jpeg');  Background image */
+    background-size: cover; /* Makes the image cover the entire area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-end; /* Align button to the right */
+}
+
+.badge {
+    position: absolute; /* Position it relative to the header-content */
+    background: rgb(175, 247, 7);
+    color: #1ac776;
+    left: 10px;
+    top: 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 25px;
+}
+
+.header-content h1 {
+    font-size: 70px;
+    text-align: left; /* Align text to the left */
+    color: rgb(6, 138, 6);
+    text-decoration: dotted; /* This won't work with all browsers; consider removing */
+    font-family: 'Pacifico', cursive;
+}
+
+.subheading {
+    color: #084f72;
+    font-size: 18px;
+    margin-top: -10px; /* Remove duplicate margin */
+    text-align: left; /* Ensure left alignment */
+    font-family: 'Pacifico', cursive; 
+}
+
+.profile-pic{
+    text-align: right;
+    border-radius: 25px;
+    object-fit: cover;
+    max-height: 300px;
+}
+.button {
+    padding: 10px 20px;
+    background-color: #1ac776;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+
+.seedlings {
+    text-align: center;
+    margin-top: 0;
+    padding: 60px 0; 
+    min-height: 250px; 
+}
+
+.seedlings h2 {
+    text-align: left;
+    font-size: 30px;
+    color: #1ac776;
+    margin-left: 20px;
+    margin-top: -30px;
+}
+
+.seedlings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusts columns based on available space */
+    gap: 30px; /* Space between items */
+}
+
+.seedlings-item {
+    position: relative; /* Allows absolute positioning within */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    min-height: 250px;
+}
+
+.seedling-button {
+    position: absolute;
+    bottom: 20px; /* Adjust based on padding */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+
+.seedlings-item:nth-child(1) {
+    background-image: url('images/kales1.jpg'); /* Kales */
+}
+
+.seedlings-item:nth-child(2) {
+    background-image: url('images/managu1.jpg'); /* Managu */
+}
+
+.seedlings-item:nth-child(3) {
+    background-image: url('images/spinach1.jpg'); /* Spinach */
+}
+
+.seedlings-item:nth-child(4) {
+    background-image: url('images/Grevillea1.jpg'); /* Grevillea */
+}
+
+.seedlings-item:nth-child(5) {
+    background-image: url('images/bluegum1.jpg'); /* Avocado */
+}
+
+.seedlings h3 {
+    color: green;
+    text-decoration: underline;
+}
+
+.services {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    
+    gap: 20px; /* Space between the heading and columns */
+}
+
+.services h2 {
+    text-align: left;
+    font-size: 30px;
+    color: #1ac776;
+    margin-left: 20px;
+    margin-top: -30px;
+}
+.services-container {
+    display: flex; /* Use flexbox for the main container */
+    width: 100%; /* Full width of the section */
+}
+
+.services-left {
+    flex: 1; /* Take up half of the width */
+    min-height: 150px; /* Set a minimum height for left section */
+}
+
+.services-left .services-item {
+    height: 100%; /* Allow the item to fill the left section */
+}
+
+.services-right {
+    flex: 1; /* Take up half of the width */
+    display: flex; /* Allow items to stack vertically */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.services-item {
+    position: relative; /* Allows positioning of h3 inside */
+    padding: 20px; /* Space inside the item */
+    border-radius: 8px; /* Rounded corners */
+    color: white; /* Ensure text is visible */
+    min-height: 150px; /* Minimum height for visibility */
+    margin: 5px; /* Spacing around items */
+    background-size: cover; /* Cover the entire item */
+    background-position: center; /* Center the background image */
+}
+.services-item.landscaping {
+    background-image: url('images/lawn2.jpg'); /* Image for Landscaping */
+}
+
+.services-item.delivery {
+    background-image: url('images/delivery.jpg'); /* Image for Delivery */
+}
+
+.services-item.seminars {
+    background-image: url('images/seminar1.jpg'); /* Image for Seminars */
+}
+.services-item h3 {
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the container */
+    left: 0;
+    width: 100%; /* Full width of the container */
+    text-align: center; /* Center the text horizontally */
+    font-family: Arial, sans-serif;
+    color: white; /* Text color for better readability */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px; /* Space around the text */
+    margin: 0; /* Remove default margin */
+    border-radius: 0 0 8px 8px; /* Rounded corners on the bottom */
+}
+
+.info {
+    margin-bottom: 40px;
+    text-align: left;
+}
+.contact {
+    text-align: center;
+}
+.contact h2 {
+    color: #3c16e6;
+    margin-top: -20px;
+}
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact-item {
+    background-color: #1C2833;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+}
+footer {
+    background-color: rgb(9, 156, 41);
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+}
+/* Product Section Styling */
+.product {
+    display: flex;
+    height: 100vh; /* Full-screen height */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.left-section,
+.right-section {
+    flex: 1; /* This makes both sections take up equal width */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the start */
+    flex-direction: column; /* Align items vertically */
+    gap: 10px; /* Space between elements */
+}
+
+.left-section img {
+    width: 100%; /* Make image take up full width of its section */
+    height: 300px; /* Make image cover the full height of the left section */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.right-section {
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    justify-content: flex-start; /* Align content to the top */
+    gap: 10px; /* Add space between elements */
+}
+
+.right-section h1 {
+    font-size: 32px;
+    color: #1ac776; /* or any specific color you prefer */
+    margin-bottom: 10px;
+}
+
+.about {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
+.price {
+    font-size: 24px;
+    color: #1ac776;
+    margin-bottom: 20px; /* Space between price and order button */
+}
+
+.order-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.order-button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Badge Styling */
+.product-badge {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    background-color: #f10a0a;
+    color: white;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* Pop-up Styling */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    z-index: 1; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    text-align: left;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #0dec18;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.popup h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.popup label {
+    font-size: 16px;
+    color: #555;
+}
+
+.popup input,
+.popup select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.popup .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup .submit-btn:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}

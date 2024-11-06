@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Products">Products</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#About">About</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <section class="product">
+            <div class="product-badge">DEAL OF THE WEEK</div>
+            <div class="left-section">
+                <img src="images/kales1.jpg" alt="Profile Picture">
+            </div>
+            <div class="right-section">
+                <h1>Kales</h1>
+                <p class="about">1 week old fresh seedlings</p>
+                <p class="price">Ksh 5 per seedling</p>
+                <button class="order-button" onclick="openPopup()">Order Now</button>
+            </div>
+
+        </section>
+
+        <!-- Pop-up Form -->
+        <div class="popup" id="orderPopup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2>Order Kales Seedlings</h2>
+                <form id="orderForm" onsubmit="handleOrderSubmit(event)">
+                    <!-- Quantity Input -->
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required onchange="updatePrice()">
+        
+                    <!-- Payment Method -->
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method" name="payment-method" required onchange="handlePaymentMethodChange()">
+                        <option value="mpesa">Choose Payment Method</option>
+                        <option value="mpesa">Mpesa</option>
+                        <option value="cash">Cash on Delivery</option>
+                    </select>
+        
+                    <!-- Mpesa Phone Number Field (Initially hidden) -->
+                    <div id="mpesa-phone-container" style="display: none;">
+                        <label for="mpesa-phone">Mpesa Phone Number:</label>
+                        <input type="text" id="mpesa-phone" name="mpesa-phone" placeholder="Enter Mpesa Phone Number" required>
+                    </div>
+        
+                    <!-- Proceed to Pay Button (Initially hidden) -->
+                    <div id="proceed-to-pay-container" style="display: none;">
+                        <button type="button" id="proceed-to-pay" onclick="showPaymentDetails()">Proceed to Pay</button>
+                    </div>
+        
+                    <!-- Payment Details Section for Mpesa (Initially hidden) -->
+                    <div id="payment-details-container" style="display: none;">
+                        <label for="mpesa-amount">Amount to Pay:</label>
+                        <input type="number" id="mpesa-amount" name="mpesa-amount" placeholder="Enter Amount" required>
+        
+                        <label for="mpesa-method">Payment Method:</label>
+                        <select id="mpesa-method" name="mpesa-method">
+                            <option value="full">Full Payment</option>
+                            <option value="partial">Partial Payment</option>
+                        </select>
+        
+                        <button type="button" onclick="confirmPayment()">Confirm Payment</button>
+                    </div>
+        
+                    <!-- Cash on Delivery (No action required here) -->
+                    <div id="cash-on-delivery-container" style="display: none;">
+                        <p>Your order will be confirmed with Cash on Delivery.</p>
+                    </div>
+        
+                    <!-- Delivery Location -->
+                    <label for="delivery-location">Delivery Location:</label>
+                    <input type="text" id="delivery-location" name="delivery-location" placeholder="Enter your address" required>
+        
+                    <!-- Price Calculation -->
+                    <div id="price-section">
+                        <p>Price per Seedling: <span id="unit-price">5</span> (in currency)</p>
+                        <p>Total Price: <span id="total-price">0</span></p>
+                        <p>Delivery Fee: <span id="delivery-fee">10</span> (in currency)</p>
+                        <p><strong>Total Amount: <span id="final-amount">10</span> (in currency)</strong></p>
+                    </div>
+        
+                    <button type="submit" class="submit-btn">Place Order</button>
+                </form>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>
